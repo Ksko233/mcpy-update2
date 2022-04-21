@@ -1,0 +1,78 @@
+with open("config/lang") as f:
+    t = f.read()
+    if t[0] == "z":
+        textPos = "位置"
+        textStart = "开始"
+        textWorlds = "世界"
+        textMultiplayer = "多人游戏"
+        textPlayWorld = "进入世界"
+        textAddons = "插件"
+        textLaunchpadTitle = "MCPY 辅助启动器"
+        textContinue = "继续游戏"
+        textMainmenu = "菜单"
+        textRenderFix = "点击此处修复渲染器"
+        textBack = "返回"
+        textReset = "重新加载"
+        textResetWorld = "重置"
+        textHelp = "帮助"
+        textSettings = "设置"
+        textMarket = "市场"
+        textExit = "退出"
+        textExitInfo = "你确定要退出 MCPY 启动面板吗?"
+        textNoSelect = "没有被选中的世界。请选择一个世界。"
+        textResetInfo = "你确定要重置选中的世界，然后进入吗？"
+        textNoServer = "无法连接到服务器！"
+        textNoteRun = " 运行    "
+        textNoteModify = " 修改    "
+        textNoteOptions = " 选项    "
+
+        terrainForest = "启用森林"
+        terrainSnow = "启用雪地"
+        terrainIceRiver = "启用冰河"
+        terrainDesert = "启用沙漠"
+        terrainArid = "启用干旱"
+        textInfDev = "无限世界"
+
+        titleError = "错误"
+        titleWarning = "警告"
+
+        WORLDS_NAMES = ["世界   1", "世界   2", "世界   3", \
+                        "世界   4", "世界   5", "世界   6"]
+    else:
+        textPos = "Position"
+        textStart = "Start"
+        textWorlds = "Worlds"
+        textMultiplayer = "Multiplayer"
+        textaplayWorld = "Play world"
+        textAddons = "Addons"
+        textLaunchpadTitle = "MCPY Launchpad"
+        textContinue = "Resune"
+        textMainmenu = "Menu"
+        textRenderFix = "Click here to fix renderer"
+        textBack = "Back"
+        textReset = "Reload"
+        textResetWorld = "Reset"
+        textHelp = "Get help"
+        textSettings = "Settings"
+        textMarket = "Market"
+        textExit = "Leave"
+        textExitInfo = "Are you sure you are leaving MCPY Launchpad?"
+        textNoSelect = "No worlds are selected.\nPlease select a world."
+        textResetInfo = "Are you sure to reset selected world and play?"
+        textNoServer = "Cannot connect to the server!"
+        textNoteRun = "  Run  "
+        textNoteModify = " Modify "
+        textNoteOptions = " Options "
+
+        terrainForest = "Forest"
+        terrainSnow = "Snow"
+        terrainIceRiver = "Icy rivers"
+        terrainDesert = "Desert"
+        terrainArid = "Arid world"
+        textInfDev = "Infinite"
+
+        titleError = "ERROR"
+        titleWarning = "WARNING"
+
+        WORLDS_NAMES = ["Default world", "Extra World-1", "Extra World-2", \
+                        "Extra World-3", "Extra World-4", "Extra World-5"]
