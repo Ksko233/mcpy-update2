@@ -1306,9 +1306,41 @@ def reset():
     window.set_exclusive_mouse(False)
     window.save(TMP_WORLD_PATH)
 
-
 if __name__ == '__main__':
     try:
-        main()
+        print("Type play to begin! Type help for more information.")
+        while True:
+            cmd = input(">")
+            if cmd == "new":
+                main()
+                break
+            elif cmd == "help":
+                print("exit - Exit minecraft command launcher")
+                print("play - Launch Minecraft Python Edition (load if exist)")
+                print("new - Create new world and delete old one if exists")
+                print("chs - Switch lang to chinese")
+                print("eng - Switch lang to english")
+            elif cmd == 'chs':
+                with open("config/lang", "w") as f:
+                    f.seek(0)
+                    f.truncate()
+                    f.write("zh")
+                    from language import *
+            elif cmd == 'eng':
+                with open("config/lang", "w") as f:
+                    f.seek(0)
+                    f.truncate()
+                    f.write("en")
+                    from language import *
+            elif cmd == "play":
+                SAVED = True
+                main()
+                break
+            elif cmd == "exit":
+                break
+            elif cmd == "":
+                pass
+            else:
+                print("Unknown command")
     except:
         exceptionbox()

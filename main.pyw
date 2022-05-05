@@ -20,10 +20,12 @@ def nothing():
 def get_wrong_value(number=0):
     return 114514
 
-style = {"width":11}
+if mac_ver()[0]:
+    style = {"width":9}
+else:
+    style = {"width":11}
 
 
-import engine
 
 class ClassicLaunchpad(object):
     """MCPY Dev的启动器窗口, 不推荐使用"""
@@ -128,15 +130,15 @@ class AlphaLaunchpad(tk.Tk):
         self.ckvs.append(v5)
         v6 = tk.BooleanVar(value=True)
         self.ckvs.append(v6)
-        self.ck1 = tk.Checkbutton(cks, text=terrainForest, variable=v1)
+        self.ck1 = ttk.Checkbutton(cks, text=terrainForest, variable=v1)
         self.ck1.grid(row=0, column=0, sticky='w')
-        self.ck2 = tk.Checkbutton(cks, text=terrainSnow, variable=v2)
+        self.ck2 = ttk.Checkbutton(cks, text=terrainSnow, variable=v2)
         self.ck2.grid(row=0, column=1, sticky='w')
-        self.ck3 = tk.Checkbutton(cks, text=terrainIceRiver, variable=v3)
+        self.ck3 = ttk.Checkbutton(cks, text=terrainIceRiver, variable=v3)
         self.ck3.grid(row=0, column=2, sticky='w')
-        self.ck4 = tk.Checkbutton(cks, text=terrainDesert, variable=v4)
+        self.ck4 = ttk.Checkbutton(cks, text=terrainDesert, variable=v4)
         self.ck4.grid(row=1, column=0, sticky='w')
-        self.ck5 = tk.Checkbutton(cks, text=terrainArid, variable=v5)
+        self.ck5 = ttk.Checkbutton(cks, text=terrainArid, variable=v5)
         self.ck5.grid(row=1, column=1, sticky='w')
         self.ck6 = ttk.Checkbutton(cks, text=textInfDev, variable=v6)
         self.ck6.grid(row=1, column=2, sticky='w', padx=(3, 0))
@@ -155,6 +157,7 @@ class AlphaLaunchpad(tk.Tk):
 
     def __rungame(self):
         log("Starting engine...")
+        import engine
         engine.INFWORLD = self.ckvs[5].get()
         engine.TERRAIN = [self.ckvs[0].get(), self.ckvs[1].get(), self.ckvs[2].get(), self.ckvs[3].get(), self.ckvs[4].get()]
         tk.Tk.destroy(self)
@@ -164,6 +167,7 @@ class AlphaLaunchpad(tk.Tk):
 
     def __loadgame(self):
         log("Loading game...")
+        import engine
         tk.Tk.destroy(self)
         engine.SAVED = True
         engine.main()
@@ -188,6 +192,7 @@ class AlphaLaunchpad(tk.Tk):
         except IndexError:
             msgbox.showerror(textLaunchpadTitle, textNoSelect)
             return
+        import engine
         engine.TMP_WORLD_PATH = engine.WORLDS_PATHS[index]
         engine.SAVED = saved
         engine.INFWORLD = self.ckvs[5].get()
